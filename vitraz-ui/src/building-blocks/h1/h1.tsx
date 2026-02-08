@@ -6,7 +6,12 @@ const textAlignMap = {
 	right: "text-right",
 }
 
-export default function H1({ text, position }: { text: string; position: "left" | "center" | "right" }) {
+interface H1Props {
+	text: string
+	position: "left" | "center" | "right"
+}
+
+export default function H1({ text, position }: H1Props) {
 	const [textPosition, setTextPosition] = useState("")
 
 	useEffect(() => {

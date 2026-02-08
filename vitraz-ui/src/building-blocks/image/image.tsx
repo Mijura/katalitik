@@ -1,38 +1,48 @@
 import { useEffect, useState } from "react"
 
-export default function Image(props: any) {
-	const [width, setWidth] = useState(400)
-	const [position, setPosition] = useState(props.position)
-	const [source, setSource] = useState(props.source)
-	const [radius, setRadius] = useState("rounded-[20px]")
+export default function Image({
+	source,
+	position,
+	size,
+	radius,
+}: {
+	source: string
+	position: "left" | "center" | "right"
+	size: "small" | "medium" | "large"
+	radius: "full" | "rounded"
+}) {
+	const [imageWidth, setImageWidth] = useState(400)
+	const [imagePosition, setImagePosition] = useState(position)
+	const [imageSource, setImageSource] = useState(source)
+	const [borderRadius, setBorderRadius] = useState("rounded-[20px]")
 
 	useEffect(() => {
-		if (props.radius == "full") {
-			setRadius("rounded-full")
+		if (radius == "full") {
+			setBorderRadius("rounded-full")
 		}
-	}, [props.radius])
+	}, [radius])
 
 	useEffect(() => {
-		if (props.size == "small") {
-			setWidth(200)
-		} else if (props.size == "medium") {
-			setWidth(300)
-		} else if (props.size == "large") {
-			setWidth(400)
+		if (size == "small") {
+			setImageWidth(200)
+		} else if (size == "medium") {
+			setImageWidth(300)
+		} else if (size == "large") {
+			setImageWidth(400)
 		}
-	}, [props.size])
+	}, [size])
 
 	useEffect(() => {
-		setSource(props.source)
-	}, [props.source])
+		setImageSource(source)
+	}, [source])
 
 	useEffect(() => {
-		setPosition(props.position)
-	}, [props.position])
+		setImagePosition(position)
+	}, [position])
 
 	return (
-		<div className="flex h-max w-full" style={{ justifyContent: position }}>
-			<img className={`${radius}`} width={width} height="auto" src={source} loading="lazy" />
+		<div className="flex h-max w-full" style={{ justifyContent: imagePosition }}>
+			<img className={`${borderRadius}`} width={imageWidth} height="auto" src={imageSource} loading="lazy" />
 		</div>
 	)
 }

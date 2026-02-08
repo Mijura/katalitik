@@ -25,7 +25,7 @@ export default function SizeEditor(props: any) {
 			<div className="pb-3 w-[150px]">
 				{sizes.map((size: any) => (
 					<div className="py-2">
-						<Checkbox selected={value == size.key} onChange={() => setValue(size.key)}>
+						<Checkbox id={size.key} selected={value == size.key} onChange={() => setValue(size.key)}>
 							{size.text}
 						</Checkbox>
 					</div>

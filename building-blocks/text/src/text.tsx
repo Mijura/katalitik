@@ -6,7 +6,12 @@ const textAlignMap = {
 	right: "text-right",
 }
 
-export default function Text({ text, position = "left" }: { text: string; position?: "left" | "center" | "right" }) {
+interface TextProps {
+	text: string
+	position: "left" | "center" | "right"
+}
+
+export default function Text({ text, position }: TextProps) {
 	const [textPosition, setTextPosition] = useState("")
 
 	useEffect(() => {
