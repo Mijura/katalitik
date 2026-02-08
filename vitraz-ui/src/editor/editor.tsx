@@ -7,7 +7,7 @@ import { getPages, updatePage } from "../api/page"
 import { replaceBlock } from "../util/traversals/replace-block"
 import LeftSideMenu from "./left-side-menu"
 import { blockingUpdated } from "../reducers/editor-reducer"
-import { PagePreview } from "./page-preview/page-preview"
+import { PagePreview } from "../page-preview/page-preview"
 
 export default function Editor() {
 	const blocked = useBlocked()
@@ -51,8 +51,8 @@ export default function Editor() {
 				<div className="w-[200px] min-w-[200px] max-w-[200px] lg:w-[230px] lg:min-w-[230px] lg:max-w-[230px] grow-0">
 					<LeftSideMenu />
 				</div>
-				<div className={`flex flex-col pt-20 ${sidebarVisible ? "grow" : "w-full"} max-h-dvh h-dvh overflow-y-auto`}>
-					<div className="grow">{page && <PageRenderer mode="editing" />}</div>
+				<div className={`flex flex-col pt-10 ${sidebarVisible ? "grow" : "w-full"} max-h-dvh h-dvh overflow-y-auto`}>
+					<div className="grow px-20">{page && <PageRenderer mode="editing" />}</div>
 				</div>
 
 				<div className={`grow-0 ${sidebarVisible ? "w-[50%]" : ""}`}>{sidebarVisible && <PagePreview />}</div>

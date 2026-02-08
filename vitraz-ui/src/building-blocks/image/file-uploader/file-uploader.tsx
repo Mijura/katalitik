@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import Alert from "./alert"
 import { useRootPage } from "../../../util/store"
 import AlertProps, { AlertType } from "./alert"
-import { FileTooLargeError } from "../../../util/errors/file-too-large-error"
+import { FileTooLargeError } from "../errors/file-too-large-error"
 import FileHelper from "../../../util/file-upload/file-upload"
 import { Button } from "@jigjoy-io/ui-library"
 

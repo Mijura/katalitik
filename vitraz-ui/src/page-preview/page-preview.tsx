@@ -1,9 +1,9 @@
 import { AnimatePresence, LazyMotion, m } from "framer-motion"
-import { useSidebarVisible } from "../../util/store"
+import { useSidebarVisible } from "../util/store"
 import { useDispatch } from "react-redux"
-import { sidebarExpanded } from "../../reducers/sidebar-reducer"
+import { sidebarExpanded } from "../reducers/sidebar-reducer"
 import { Tooltip } from "@jigjoy-io/ui-library"
-import PageRenderer from "../../building-blocks/page/page"
+import PageRenderer from "../building-blocks/page/page"
 
 const animation = {
 	hidden: {
@@ -22,7 +22,7 @@ const transition: any = {
 	duration: 0.15,
 }
 
-const loadFeatures = () => import("../../util/style-helper/animations").then((res) => res.default)
+const loadFeatures = () => import("../util/style-helper/animations").then((res) => res.default)
 
 export function PagePreview() {
 	const visible = useSidebarVisible()
@@ -51,7 +51,7 @@ export function PagePreview() {
 								</Tooltip>
 							</div>
 
-							<div className="flex flex-col justify-center items-center gap-4 px-10">
+							<div className="flex flex-col gap-4 px-20">
 								<PageRenderer mode="visiting" />
 							</div>
 						</div>

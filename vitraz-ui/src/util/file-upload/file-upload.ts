@@ -1,6 +1,6 @@
 import { uploadDocument } from "../../api/upload"
-import { FileMissingError } from "../errors/file-missing-error"
-import { FileTooLargeError } from "../errors/file-too-large-error"
+import { FileMissingError } from "../../building-blocks/image/errors/file-missing-error"
+import { FileTooLargeError } from "../../building-blocks/image/errors/file-too-large-error"
 
 export default class FileHelper {
 	static fileToBase64 = (file: File): Promise<string> => {
