@@ -1,13 +1,13 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import Page from "../building-blocks/page/page"
-import { modeUpdated, pageUpdated, pagesUpdated, rootPageUpdated } from "../reducers/page-reducer"
+import PageRenderer from "../building-blocks/page/page"
+import { pageUpdated, pagesUpdated, rootPageUpdated } from "../reducers/page-reducer"
 import { AppDispatch, useBlocked, useModified, usePage, useRootPage, useSidebarVisible } from "../util/store"
 import { getPages, updatePage } from "../api/page"
 import { replaceBlock } from "../util/traversals/replace-block"
 import LeftSideMenu from "./left-side-menu"
-import { RightSideMenu } from "./right-side-menu/right-side-menu"
 import { blockingUpdated } from "../reducers/editor-reducer"
+import { PagePreview } from "./page-preview/page-preview"
 
 export default function Editor() {
 	const blocked = useBlocked()
@@ -31,7 +31,6 @@ export default function Editor() {
 
 	useEffect(() => {
 		dispatch(blockingUpdated(false))
-		dispatch(modeUpdated("editing"))
 		getPages().then((pages) => {
 			dispatch(pagesUpdated(pages))
 			if (pages.length > 0 && !rootPage) {
@@ -53,10 +52,10 @@ export default function Editor() {
 					<LeftSideMenu />
 				</div>
 				<div className={`flex flex-col pt-20 ${sidebarVisible ? "grow" : "w-full"} max-h-dvh h-dvh overflow-y-auto`}>
-					<div className="grow">{page && <Page />}</div>
+					<div className="grow">{page && <PageRenderer mode="editing" />}</div>
 				</div>
 
-				<div className={`grow-0 ${sidebarVisible ? "w-[50%]" : ""}`}>{sidebarVisible && <RightSideMenu />}</div>
+				<div className={`grow-0 ${sidebarVisible ? "w-[50%]" : ""}`}>{sidebarVisible && <PagePreview />}</div>
 			</div>
 		</div>
 	)

@@ -9,7 +9,6 @@ interface PageState {
 	modified: any
 	rootPage: any
 	activePage: any
-	mode: string
 	activeBlock: string | null
 	pages: any[]
 	activePlayer: string | null
@@ -21,7 +20,6 @@ let initialState: PageState = {
 	modified: null,
 	rootPage: null,
 	activePage: null,
-	mode: "visiting",
 	activeBlock: null,
 	pages: [],
 	activePlayer: null,
@@ -52,7 +50,7 @@ export const pageSlice = createSlice({
 			state.activePage = action.payload
 
 			// highlight and expand node in the tree
-			if (state.activePage && state.mode == "editing") {
+			if (state.activePage) {
 				state.expandedPages.push(action.payload)
 
 				if (state.activePage.type == "blank") {
@@ -97,10 +95,6 @@ export const pageSlice = createSlice({
 			state.activeBlock = action.payload
 		},
 
-		modeUpdated: (state, action: PayloadAction<any>) => {
-			state.mode = action.payload
-		},
-
 		pagesUpdated: (state, action: PayloadAction<any>) => {
 			state.pages = action.payload
 		},
@@ -122,7 +116,6 @@ export const {
 	pageExpanded,
 	rootPageUpdated,
 	pageUpdated,
-	modeUpdated,
 	insertBlock,
 	removeBlock,
 	updateBlock,

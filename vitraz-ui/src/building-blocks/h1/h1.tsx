@@ -19,8 +19,8 @@ export default function H1({ text, position }: H1Props) {
 	}, [position])
 
 	return (
-		<div className={`inline-block w-full h-min-[2.5rem] h-max`}>
-			<div className={`text-title w-full flex ${textPosition}`}>{text}</div>
+		<div className={`inline-block w-full`}>
+			<div className={`text-4xl font-bold flex items-center ${textPosition}`}>{text}</div>
 		</div>
 	)
 }

@@ -1,8 +1,9 @@
 import { AnimatePresence, LazyMotion, m } from "framer-motion"
-import { AppDispatch, useSidebarComponent, useSidebarVisible } from "../../util/store"
+import { useSidebarVisible } from "../../util/store"
 import { useDispatch } from "react-redux"
 import { sidebarExpanded } from "../../reducers/sidebar-reducer"
 import { Tooltip } from "@jigjoy-io/ui-library"
+import PageRenderer from "../../building-blocks/page/page"
 
 const animation = {
 	hidden: {
@@ -23,24 +24,18 @@ const transition: any = {
 
 const loadFeatures = () => import("../../util/style-helper/animations").then((res) => res.default)
 
-export function RightSideMenu() {
-	const sidebar = {
-		visible: useSidebarVisible(),
-		component: useSidebarComponent(),
-	}
+export function PagePreview() {
+	const visible = useSidebarVisible()
 
-	const dispatch = useDispatch<AppDispatch>()
+	const dispatch = useDispatch()
 
 	return (
 		<LazyMotion features={loadFeatures}>
 			<AnimatePresence>
-				{sidebar.visible && (
+				{visible && (
 					<m.div variants={animation} initial="hidden" animate="show" exit="exit" transition={transition}>
 						<div className="border-l border-light shadow-lg fixed right-0 bottom-0 h-dvh lg:w-[50%] bg-[white] flex flex-col">
-							<div
-								className="h-[24px] w-[24px] m-2"
-								onClick={() => dispatch(sidebarExpanded({ expanded: false, component: null }))}
-							>
+							<div className="h-[24px] w-[24px] m-2" onClick={() => dispatch(sidebarExpanded({ expanded: false }))}>
 								<Tooltip message="Close panel">
 									<div
 										aria-label="Close panel"
@@ -56,7 +51,9 @@ export function RightSideMenu() {
 								</Tooltip>
 							</div>
 
-							{sidebar.component && <sidebar.component />}
+							<div className="flex flex-col justify-center items-center gap-4 px-10">
+								<PageRenderer mode="visiting" />
+							</div>
 						</div>
 					</m.div>
 				)}

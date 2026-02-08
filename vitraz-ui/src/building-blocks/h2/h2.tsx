@@ -19,8 +19,8 @@ export default function H2({ text, position }: H2Props) {
 	}, [position])
 
 	return (
-		<div className={`inline-block w-full h-min-[2rem] h-max`}>
-			<div className={`text-heading w-full flex ${textPosition}`}>{text}</div>
+		<div className={`inline-block w-full`}>
+			<div className={`text-3xl font-bold flex items-center ${textPosition}`}>{text}</div>
 		</div>
 	)
 }

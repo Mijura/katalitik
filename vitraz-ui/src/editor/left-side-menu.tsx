@@ -3,7 +3,6 @@ import { usePages, useRootPage } from "../util/store"
 import Node from "./node"
 import { sidebarExpanded } from "../reducers/sidebar-reducer"
 import MagicIcon from "../icons/magic-icon"
-import SidePanel from "./right-side-menu/side-panel"
 
 export default function LeftSideMenu() {
 	const pages = usePages()
@@ -33,13 +32,13 @@ export default function LeftSideMenu() {
 
 				<div
 					className="flex flex-col pl-4 hover:cursor-pointer hover:bg-primary-light h-[30px] items-center"
-					onClick={() => dispatch(sidebarExpanded({ expanded: true, component: SidePanel }))}
+					onClick={() => dispatch(sidebarExpanded({ expanded: true }))}
 				>
 					<div className="flex flex-row w-full h-full">
 						<div className="pr-2 flex items-center">
 							<MagicIcon />
 						</div>
-						<div className="flex items-center">Right Side Menu</div>
+						<div className="flex items-center">Page Preview</div>
 					</div>
 				</div>
 			</div>

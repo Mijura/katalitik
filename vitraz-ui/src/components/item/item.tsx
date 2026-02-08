@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState } from "react"
 
-export default function Item(props: {
+interface ItemProps {
 	selected?: string
 	tabFocus?: boolean
 	borderOn?: boolean
@@ -10,7 +10,9 @@ export default function Item(props: {
 	color?: string
 	text: string
 	id?: string
-}) {
+}
+
+export default function Item(props: ItemProps) {
 	const [selected, setSelected] = useState(props.selected)
 
 	useEffect(() => {

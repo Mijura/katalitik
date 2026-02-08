@@ -1,5 +1,5 @@
 import React, { Suspense } from "react"
-import PageRef from "../../building-blocks/page/page.display"
+import PageRef from "../../building-blocks/page/page.ref"
 import H1 from "../../building-blocks/h1/h1"
 import H2 from "../../building-blocks/h2/h2"
 import Image from "../../building-blocks/image/image"
