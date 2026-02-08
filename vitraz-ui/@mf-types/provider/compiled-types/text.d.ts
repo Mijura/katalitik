@@ -1,4 +1,6 @@
-export default function Text({ text, position }: {
+interface TextProps {
     text: string;
     position?: "left" | "center" | "right";
-}): import("react/jsx-runtime").JSX.Element;
+}
+export default function Text({ text, position }: TextProps): import("react/jsx-runtime").JSX.Element;
+export {};

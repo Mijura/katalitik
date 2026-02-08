@@ -231,7 +231,7 @@ const Node = memo(function Node(props: any) {
 	const createNewPage = () => {
 		closeAdding()
 
-		let block = TemplateFactory.createPageDisplayBlock(props.id)
+		let block = TemplateFactory.createPageRefBlock(props.id)
 
 		let page = JSON.parse(JSON.stringify(props))
 		let root = JSON.parse(JSON.stringify(props.root))
@@ -261,7 +261,7 @@ const Node = memo(function Node(props: any) {
 			<div
 				key={props.id}
 				onClick={(e: React.MouseEvent) => loadPage(e, props)}
-				className={`w-[100%] h-[28px]
+				className={`w-full h-[28px]
             	${selected == props.id ? " bg-primary-light " : ""}
             	hover:bg-primary-light hover:bg-opacity-60 rounded-md flex flex-row items-center w-full`}
 				onMouseEnter={() => dispatch(nodeHovered(props.id))}

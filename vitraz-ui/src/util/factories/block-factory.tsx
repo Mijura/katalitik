@@ -1,5 +1,5 @@
 import React, { Suspense } from "react"
-import PageDisplay from "../../building-blocks/page/page.display"
+import PageRef from "../../building-blocks/page/page.display"
 import H1 from "../../building-blocks/h1/h1"
 import H2 from "../../building-blocks/h2/h2"
 import Image from "../../building-blocks/image/image"
@@ -28,7 +28,7 @@ export default class BlockFactory extends React.Component {
 			component: ImageUploader,
 		},
 		"page.display": {
-			component: PageDisplay,
+			component: PageRef,
 		},
 		"block-selector": {
 			component: BlockSelector,

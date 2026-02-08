@@ -59,7 +59,7 @@ export default class TemplateFactory {
 		}
 	}
 
-	static createPageDisplayBlock(origin: any) {
+	static createPageRefBlock(origin: any) {
 		let block = this.create("page.display")
 		let page = this.createBlankPage(origin)
 
@@ -73,7 +73,7 @@ export default class TemplateFactory {
 
 		let block: any = null
 
-		if (type == "page.display") block = this.createPageDisplayBlock(origin)
+		if (type == "page.display") block = this.createPageRefBlock(origin)
 
 		return block
 	}

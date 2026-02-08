@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { pageExpanded, pageUpdated } from "../../reducers/page-reducer"
 import PageIcon from "./page.icon"
 
-export default function PageDisplay({ title = "Blank Page", page }: { title: string; page: any }) {
+export default function PageRef({ title = "Blank Page", page }: { title: string; page: any }) {
 	const dispatch = useDispatch()
 
 	const load = () => {
