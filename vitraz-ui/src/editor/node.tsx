@@ -309,14 +309,15 @@ const Node = memo(function Node(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={closeDropdown}>
 						<div
-							className={`fixed flex p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
+							className={`fixed flex flex-col p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 							style={{ top: rect.top + rect.height, left: rect.x + rect.width - 20 }}
 							ref={portalRef}
 						>
-							<div className="">
+							<div className="flex flex-col gap-2 text-xs text-secondary p-2">Page</div>
+							<div>
 								<Item text="Rename" tabFocus={false} icon={RenameIcon} onClick={openRenamePopup} />
 								<Item text="Duplicate" tabFocus={false} icon={DuplicateIcon} onClick={duplicatePage} />
-								<hr className="text-surface-muted" />
+								<div className="m-1 border-b border-0.5 border-[#ffffeb1a]" />
 								<Item text="Delete" onClick={openDeletePopup} icon={DeleteBlockIcon} />
 							</div>
 						</div>

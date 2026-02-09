@@ -136,23 +136,26 @@ export default function BlockSelector(props: any) {
 					<ClickOutsideListener callback={closeMenu}>
 						<div
 							style={{ top: top, left: left }}
-							className={`fixed flex flex-col h-auto overflow-y-auto rounded-lg shadow-xl bg-surface text-secondary border border-surface-muted`}
+							className={`fixed flex flex-col p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 						>
-							{options.map((option: any, index: number) => (
-								<div key={option.key}>
-									{option.commands.map((command: any) => (
-										<div key={command.key}>
-											<Item
-												icon={command.icon}
-												text={command.label}
-												tabFocus={true}
-												onClick={(e: any) => insert(e, command.key)}
-											></Item>
-										</div>
-									))}
-									{options.length != index + 1 && <hr className="border-surface-light" />}
-								</div>
-							))}
+							<div className="flex flex-col gap-2 text-xs text-secondary p-2">Building Blocks</div>
+							<div className="flex flex-col gap-2 text-xs text-secondary">
+								{options.map((option: any, index: number) => (
+									<div key={option.key}>
+										{option.commands.map((command: any) => (
+											<div key={command.key}>
+												<Item
+													icon={command.icon}
+													text={command.label}
+													tabFocus={true}
+													onClick={(e: any) => insert(e, command.key)}
+												></Item>
+											</div>
+										))}
+										{options.length != index + 1 && <hr className="border-surface-light" />}
+									</div>
+								))}
+							</div>
 						</div>
 					</ClickOutsideListener>,
 					document.body,
