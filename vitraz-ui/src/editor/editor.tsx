@@ -55,7 +55,7 @@ export default function Editor() {
 					<div className="grow px-20">{page && <PageRenderer mode="editing" />}</div>
 				</div>
 
-				<div className={`grow-0 bg-surface-light ${sidebarVisible ? "w-[50%]" : ""}`}>
+				<div className={`grow-0 bg-surface-light ${sidebarVisible ? "w-[33%]" : ""}`}>
 					{sidebarVisible && <PagePreview />}
 				</div>
 			</div>

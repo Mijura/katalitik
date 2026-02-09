@@ -31,14 +31,14 @@ export default function LeftSideMenu() {
 				<div className="px-3 py-2">Options</div>
 
 				<div
-					className="flex flex-col hover:cursor-pointer hover:bg-[hsla(0,0%,100%,.055)] hover:text-primary rounded-sm m-1 h-[30px] items-center"
+					className="flex flex-col hover:cursor-pointer hover:bg-[hsla(0,0%,100%,.055)] hover:text-primary rounded-sm m-1 h-[28px] items-center"
 					onClick={() => dispatch(sidebarExpanded({ expanded: true }))}
 				>
 					<div className="flex flex-row w-full h-full">
-						<div className="pr-2 flex items-center">
+						<div className="m-1 flex items-center">
 							<MagicIcon />
 						</div>
-						<div className="flex items-center">Page Preview</div>
+						<div className="flex items-center">AI Assistant</div>
 					</div>
 				</div>
 			</div>

@@ -193,7 +193,7 @@ export default function Toolbar(props: any) {
 							<div className={`grid grid-cols-1 rounded-[5px] gap-1 w-max max-w-full`}>
 								<Item text="Duplicate block" tabFocus={false} icon={DuplicateIcon} onClick={duplicate} />
 								<Item text="Delete block" tabFocus={false} color="red" icon={DeleteIcon} onClick={deleteBlock} />
-								{props.editingOptions.length && <div className="m-1 border-b border-0.5 border-[#ffffeb1a]" />}
+								{props.editingOptions.length > 0 && <div className="m-1 border-b border-0.5 border-[#ffffeb1a]" />}
 								{props.editingOptions.map((option: any, index: number) => (
 									<div
 										key={index}
