@@ -329,10 +329,10 @@ const Node = memo(function Node(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={closeDelete}>
 						<div
-							className="fixed flex rounded-md p-3 shadow bg-white w-[250px]"
+							className={`fixed flex flex-col p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 							style={{ top: rect.top + rect.height, left: rect.x + rect.width }}
 						>
-							<div className="flex flex-col gap-2" onClick={(e) => e.stopPropagation()}>
+							<div className="flex flex-col gap-2 p-2" onClick={(e) => e.stopPropagation()}>
 								<p className="font-bold">Delete Page Permanently?</p>
 								<div>Are you sure? This will permanently erase all content.</div>
 								<div className="flex gap-2 mt-3 justify-end">
@@ -353,15 +353,15 @@ const Node = memo(function Node(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={closeAdding}>
 						<div
-							className="fixed flex rounded-md p-3 shadow bg-white w-[250px]"
+							className={`fixed flex flex-col p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 							style={{ top: rect.top + rect.height, left: rect.x + rect.width }}
 						>
-							<div className="flex flex-col gap-2 w-full" onClick={(e) => e.stopPropagation()}>
+							<div className="flex flex-col gap-2 p-1 w-[250px]" onClick={(e) => e.stopPropagation()}>
 								<p className="font-bold">Choose Page Type</p>
 								<select
 									name="pageType"
 									id="pageType"
-									className="p-2 rounded-md w-full focus:outline-0"
+									className="p-1 rounded-md w-full focus:outline-0 border border-[#ffffeb1a]"
 									onChange={handlePageToCreate}
 									value={tileToAdd}
 								>
