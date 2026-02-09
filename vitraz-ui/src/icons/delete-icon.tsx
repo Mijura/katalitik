@@ -1,4 +1,4 @@
-export default function DeleteBlockIcon() {
+export default function DeleteIcon() {
 	return (
 		<div className="flex align-center justify-center text-ico-primary">
 			<svg viewBox="0 0 16 16" fill="currentColor" strokeWidth="1.5" className="w-[16px] h-[16px] block">

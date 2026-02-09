@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState } from "react"
 import { useDispatch } from "react-redux"
 import { createPage, removePage, updatePage } from "../api/page"
-import DeleteBlockIcon from "../icons/delete-block-icon"
+import DeleteBlockIcon from "../icons/delete-icon"
 import DuplicateIcon from "../icons/duplicate-icon"
 import ExpandPage from "../icons/expand-page"
 import MoreIcon from "../icons/more-icon"
@@ -315,10 +315,10 @@ const Node = memo(function Node(props: any) {
 						>
 							<div className="flex flex-col gap-2 text-xs text-secondary p-2">Page</div>
 							<div>
-								<Item text="Rename" tabFocus={false} icon={RenameIcon} onClick={openRenamePopup} />
-								<Item text="Duplicate" tabFocus={false} icon={DuplicateIcon} onClick={duplicatePage} />
+								<Item text="Rename page" tabFocus={false} icon={RenameIcon} onClick={openRenamePopup} />
+								<Item text="Duplicate page" tabFocus={false} icon={DuplicateIcon} onClick={duplicatePage} />
 								<div className="m-1 border-b border-0.5 border-[#ffffeb1a]" />
-								<Item text="Delete" onClick={openDeletePopup} icon={DeleteBlockIcon} />
+								<Item text="Delete page" onClick={openDeletePopup} icon={DeleteBlockIcon} />
 							</div>
 						</div>
 					</ClickOutsideListener>,

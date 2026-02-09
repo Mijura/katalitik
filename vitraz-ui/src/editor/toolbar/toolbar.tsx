@@ -10,7 +10,7 @@ import { duplicateBlock } from "../../util/traversals/duplcate-block"
 import ClickOutsideListener from "../../util/click-outside-listener"
 import DuplicateIcon from "../../icons/duplicate-icon"
 import OpenMenuIcon from "../../icons/open-menu-icon"
-import DeleteBlockIcon from "../../icons/delete-block-icon"
+import DeleteIcon from "../../icons/delete-icon"
 import Item from "../../components/item/item"
 
 const animation = {
@@ -159,7 +159,7 @@ export default function Toolbar(props: any) {
 												</div>
 											}
 										>
-											<div className="cursor-grab active:cursor-grabbing">
+											<div>
 												<OpenMenuIcon />
 											</div>
 										</ToolbarButtonWrapper>
@@ -185,13 +185,15 @@ export default function Toolbar(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={handleToolbarClose}>
 						<div
-							className="fixed flex rounded-lg p-1 shadow-xl border border-default-light bg-surface text-secondary z-50 -translate-x-full"
+							className={`fixed flex flex-col p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden -translate-x-full`}
 							style={{ top: toolbarTop, left: toolbarLeft }}
 							ref={toolbarRef}
 						>
+							<div className="flex flex-col gap-2 text-xs text-secondary p-2">Block</div>
 							<div className={`grid grid-cols-1 rounded-[5px] gap-1 w-max max-w-full`}>
 								<Item text="Duplicate block" tabFocus={false} icon={DuplicateIcon} onClick={duplicate} />
-								<Item text="Delete block" tabFocus={false} color="red" icon={DeleteBlockIcon} onClick={deleteBlock} />
+								<Item text="Delete block" tabFocus={false} color="red" icon={DeleteIcon} onClick={deleteBlock} />
+								{props.editingOptions.length && <div className="m-1 border-b border-0.5 border-[#ffffeb1a]" />}
 								{props.editingOptions.map((option: any, index: number) => (
 									<div
 										key={index}
@@ -199,7 +201,6 @@ export default function Toolbar(props: any) {
 											editorRefs.current[index] = el
 										}}
 									>
-										{index === 0 && <div className="border-b border-default-light" />}
 										<Item
 											text={option.name}
 											tabFocus={false}

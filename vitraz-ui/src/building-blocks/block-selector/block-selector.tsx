@@ -152,7 +152,9 @@ export default function BlockSelector(props: any) {
 												></Item>
 											</div>
 										))}
-										{options.length != index + 1 && <hr className="border-surface-light" />}
+										{options.length != index + 1 && (
+											<div className="mx-1 mt-1 mb-0 border-b border-0.5 border-[#ffffeb1a]" />
+										)}
 									</div>
 								))}
 							</div>
