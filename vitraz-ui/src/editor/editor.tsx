@@ -48,14 +48,16 @@ export default function Editor() {
 	return (
 		<div style={{ pointerEvents: blocked ? "none" : "auto" }} className="overflow-x-hidden">
 			<div className="flex flex-row">
-				<div className="w-[200px] min-w-[200px] max-w-[200px] lg:w-[230px] lg:min-w-[230px] lg:max-w-[230px] grow-0">
+				<div className="bg-surface-light w-[200px] min-w-[200px] max-w-[200px] lg:w-[230px] lg:min-w-[230px] lg:max-w-[230px] grow-0">
 					<LeftSideMenu />
 				</div>
-				<div className={`flex flex-col pt-10 ${sidebarVisible ? "grow" : "w-full"} max-h-dvh h-dvh overflow-y-auto`}>
+				<div className={`flex flex-co pt-10 ${sidebarVisible ? "grow" : "w-full"} max-h-dvh h-dvh overflow-y-auto`}>
 					<div className="grow px-20">{page && <PageRenderer mode="editing" />}</div>
 				</div>
 
-				<div className={`grow-0 ${sidebarVisible ? "w-[50%]" : ""}`}>{sidebarVisible && <PagePreview />}</div>
+				<div className={`grow-0 bg-surface-light ${sidebarVisible ? "w-[50%]" : ""}`}>
+					{sidebarVisible && <PagePreview />}
+				</div>
 			</div>
 		</div>
 	)

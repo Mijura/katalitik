@@ -5,7 +5,7 @@ import { usePage } from "../../util/store"
 function PageRenderer({ mode }: { mode: "editing" | "visiting" }) {
 	const page = usePage()
 	return (
-		<div className="flex flex-col h-full py-10 bg-white">
+		<div className="flex flex-col h-full">
 			{page.config && (
 				<div className="flex grow h-full min-h-full w-full">
 					<div className="flex flex-col w-full">

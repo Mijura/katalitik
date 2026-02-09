@@ -35,9 +35,9 @@ export default function Item(props: ItemProps) {
 			onKeyDown={handleKeyDown}
 			tabIndex={props.tabFocus ? 0 : -1}
 			className={`min-w-[225px] 
-			${selected != null && selected === props.id ? "bg-gradient-custom-opacity" : "bg-[white]"} 
-			border-2 border-[white] md:hover:bg-primary-light  
-			${props.borderOn && "border border-light shadow-md"} 
+			${selected != null && selected === props.id ? "bg-gradient-custom-opacity" : ""} 
+			text-primary text-sm p-0.5 hover:bg-[hsla(0,0%,100%,.055)]
+			${props.borderOn && "border border-surface-light shadow-md"} 
 			rounded-lg cursor-pointer flex flex-col`}
 		>
 			<div className="flex flex-row p-0.5">

@@ -136,7 +136,7 @@ export default function BlockSelector(props: any) {
 					<ClickOutsideListener callback={closeMenu}>
 						<div
 							style={{ top: top, left: left }}
-							className={`fixed flex flex-col h-auto overflow-y-auto bg-white rounded-lg shadow-xl border border-default-light`}
+							className={`fixed flex flex-col h-auto overflow-y-auto rounded-lg shadow-xl bg-surface text-secondary border border-surface-muted`}
 						>
 							{options.map((option: any, index: number) => (
 								<div key={option.key}>
@@ -150,7 +150,7 @@ export default function BlockSelector(props: any) {
 											></Item>
 										</div>
 									))}
-									{options.length != index + 1 && <hr className="border-default-light" />}
+									{options.length != index + 1 && <hr className="border-surface-light" />}
 								</div>
 							))}
 						</div>
@@ -163,7 +163,7 @@ export default function BlockSelector(props: any) {
 				type="text"
 				value={option}
 				onFocus={() => setPlaceholder(placeholder)}
-				className="w-full h-10 bg-white rounded-md outline-none"
+				className="w-full h-10 outline-none"
 				placeholder={placeholder}
 				onChange={handleChange}
 				onKeyDown={handleKeyDown}

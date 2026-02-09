@@ -11,12 +11,12 @@ export default function LeftSideMenu() {
 	const dispatch = useDispatch()
 
 	return (
-		<div className="h-dvh max-h-dvh bg-[#F2EEF0] bg-opacity-30 border-r border-light shadow-lg flex flex-col flex-none">
+		<div className="h-dvh max-h-dvh border-r text-secondary border-surface-light shadow-dialog flex flex-col flex-none">
 			<div className="grow overflow-y-auto mt-4">
 				{pages.length > 0 && (
 					<div className="flex flex-col">
 						<div className="w-full">
-							<div className="px-3 py-2 font-bold">Drafts</div>
+							<div className="px-3 py-2 text-sm">Drafts</div>
 							<div className="flex flex-col m-1 gap-0.25">
 								{pages.map((page: any) => (
 									<Node key={page.id} {...page} root={page} ident={0} />
@@ -27,11 +27,11 @@ export default function LeftSideMenu() {
 				)}
 			</div>
 
-			<div className="w-full mb-40">
-				<div className="px-3 py-2 font-bold">Options</div>
+			<div className="w-full mb-40 text-sm">
+				<div className="px-3 py-2">Options</div>
 
 				<div
-					className="flex flex-col pl-4 hover:cursor-pointer hover:bg-primary-light h-[30px] items-center"
+					className="flex flex-col hover:cursor-pointer hover:bg-[hsla(0,0%,100%,.055)] hover:text-primary rounded-sm m-1 h-[30px] items-center"
 					onClick={() => dispatch(sidebarExpanded({ expanded: true }))}
 				>
 					<div className="flex flex-row w-full h-full">

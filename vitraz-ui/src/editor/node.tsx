@@ -262,8 +262,8 @@ const Node = memo(function Node(props: any) {
 				key={props.id}
 				onClick={(e: React.MouseEvent) => loadPage(e, props)}
 				className={`w-full h-[28px]
-            	${selected == props.id ? " bg-primary-light " : ""}
-            	hover:bg-primary-light hover:bg-opacity-60 rounded-md flex flex-row items-center w-full`}
+            	${selected == props.id ? " bg-[hsla(0,0%,100%,.055)] text-primary" : ""}
+            	hover:bg-[hsla(0,0%,100%,.055)] hover:text-primary rounded-sm flex flex-row items-center w-full`}
 				onMouseEnter={() => dispatch(nodeHovered(props.id))}
 				onPointerLeave={() => dispatch(nodeHovered(null))}
 				style={{ paddingLeft: `${ident}px` }}
@@ -277,13 +277,13 @@ const Node = memo(function Node(props: any) {
 				</div>
 				{hovered === props.id && (
 					<div className="flex flex-row right-0">
-						<div onClick={expandDropdown} ref={ref} className="w-[24px] hover:bg-pink-300 rounded-md">
+						<div onClick={expandDropdown} ref={ref} className="w-[24px] hover:bg-surface-light rounded-md">
 							<Tooltip message="Delete, duplicate, and more...">
 								<MoreIcon />
 							</Tooltip>
 						</div>
 
-						<div onClick={addPage} className="w-[24px] hover:bg-pink-300 rounded-md">
+						<div onClick={addPage} className="w-[24px] hover:bg-surface-light rounded-md">
 							<Tooltip message="Add page inside">
 								<AddBlockIcon />
 							</Tooltip>
@@ -309,15 +309,15 @@ const Node = memo(function Node(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={closeDropdown}>
 						<div
-							className={`fixed flex rounded-md p-1 shadow-xl border border-default-light bg-[white]`}
+							className={`fixed flex p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 							style={{ top: rect.top + rect.height, left: rect.x + rect.width - 20 }}
 							ref={portalRef}
 						>
 							<div className="">
-								<Item text="Rename block" tabFocus={false} icon={RenameIcon} onClick={openRenamePopup} />
-								<Item text="Duplicate block" tabFocus={false} icon={DuplicateIcon} onClick={duplicatePage} />
-								<hr className="text-default-light" />
-								<Item text="Delete block" onClick={openDeletePopup} icon={DeleteBlockIcon} />
+								<Item text="Rename" tabFocus={false} icon={RenameIcon} onClick={openRenamePopup} />
+								<Item text="Duplicate" tabFocus={false} icon={DuplicateIcon} onClick={duplicatePage} />
+								<hr className="text-surface-muted" />
+								<Item text="Delete" onClick={openDeletePopup} icon={DeleteBlockIcon} />
 							</div>
 						</div>
 					</ClickOutsideListener>,
@@ -386,7 +386,7 @@ const Node = memo(function Node(props: any) {
 						>
 							<div className="flex flex-row gap-2">
 								<input
-									className="p-1 rounded-md border w-[100%]"
+									className="p-1 rounded-md border w-full"
 									value={renameValue}
 									onChange={(event) => setRenameValue(event.target.value)}
 									autoFocus

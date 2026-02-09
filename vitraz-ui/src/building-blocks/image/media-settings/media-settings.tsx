@@ -112,7 +112,7 @@ export default function MediaSettings({ mediaType, icon, props }: MediaSettingsP
 			<div
 				ref={ref}
 				onClick={openUploader}
-				className="w-[100%] py-[8px] bg-default-light hover:bg-gray-300 cursor-pointer rounded-[5px] flex items-center pl-5 hover:opacity-60"
+				className="w-full py-[8px] bg-surface hover:bg-surface-100 text-secondary cursor-pointer rounded-[5px] flex items-center pl-5"
 			>
 				{icon}
 				<div className="pl-2">Click to add an {mediaType}</div>

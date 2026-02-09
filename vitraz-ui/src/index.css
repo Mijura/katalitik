@@ -1,30 +1,27 @@
-@import "tailwindcss";
-@import "@jigjoy-io/ui-library/dist/index.css";
-
-body {
-	margin: 0;
-	font-family: "Open-sans", sans-serif;
-	width: 100%;
-}
-
-:root {
-	--primary: white;
-	--secondary: #d4d4d4;
-}
-
-input {
-	-webkit-appearance: none;
-}
+@import "../node_modules/@jigjoy-io/ui-library/dist/index.css";
+@import "../node_modules/@jigjoy-io/ui-library/dist/theme.css";
 
 @theme {
-	/* Colors */
-	--color-primary: #f672d1;
-	--color-primary-light: #fbbeea;
-	--color-default: #000000;
-	--color-default-light: #e2e2e2;
-	--color-light: #aaaaaa;
-
 	--color-alert-success: #d1f4e0;
 	--color-alert-danger: #fdd0df;
 	--color-alert-info: #e6f3ff;
+
+	--color-surface-dark: #191919;
+	--color-surface-light: #202020;
+	--color-primary: #f0efed;
+	--color-secondary: #9b9b9b;
+
+	--color-ico-primary: #e6e5e3;
+	--color-ico-secondary: #ada9a3;
+
+	--shadow-dialog: 0 0 0 1px #383836, 0px 14px 28px -6px #0003, 0px 2px 4px -1px #0000001f;
+	--shadow-dialog-pri: inset 0 0 0 1px #ffffeb1a, 0px 14px 28px -6px #0003, 0px 2px 4px -1px #0000001f;
+	--shadow-dialog-thick: 0 0 0 2px #383836, 0px 14px 28px -6px #0003, 0px 2px 4px -1px #0000001f;
+}
+
+@layer base {
+	body {
+		@apply text-primary;
+		@apply bg-surface-dark;
+	}
 }

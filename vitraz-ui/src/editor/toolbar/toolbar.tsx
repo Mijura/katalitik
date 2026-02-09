@@ -145,7 +145,7 @@ export default function Toolbar(props: any) {
 				<AnimatePresence>
 					{(on || toolbarVisible || editor) && (
 						<m.div variants={animation} initial="hidden" animate="show" exit="exit" transition={transition}>
-							<div className="absolute -translate-x-[100%] px-2">
+							<div className="absolute -translate-x-full px-2">
 								<div className="flex flex-row">
 									<AddNewBlock id={props.id} />
 									<div onClick={handleToolbarOpen} ref={openMenuRef}>
@@ -173,7 +173,7 @@ export default function Toolbar(props: any) {
 
 			<div>
 				<div
-					className={`opacity-50 bg-highlight h-[100%] w-[100%] 
+					className={`opacity-50 bg-highlight h-full w-full 
                     ${editor != null || toolbarVisible ? "absolute" : "hidden"} ${blockRadius}`}
 				/>
 				<div className={`${on && !toolbarVisible && editor == null && "opacity-80"} ${blockRadius}`}>
@@ -185,11 +185,11 @@ export default function Toolbar(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={handleToolbarClose}>
 						<div
-							className="fixed flex rounded-lg p-1 shadow-xl border border-default-light bg-[white] z-50 -translate-x-[100%]"
+							className="fixed flex rounded-lg p-1 shadow-xl border border-default-light bg-surface text-secondary z-50 -translate-x-full"
 							style={{ top: toolbarTop, left: toolbarLeft }}
 							ref={toolbarRef}
 						>
-							<div className={`grid grid-cols-1 rounded-[5px] gap-1 w-max max-w-[100%]`}>
+							<div className={`grid grid-cols-1 rounded-[5px] gap-1 w-max max-w-full`}>
 								<Item text="Duplicate block" tabFocus={false} icon={DuplicateIcon} onClick={duplicate} />
 								<Item text="Delete block" tabFocus={false} color="red" icon={DeleteBlockIcon} onClick={deleteBlock} />
 								{props.editingOptions.map((option: any, index: number) => (

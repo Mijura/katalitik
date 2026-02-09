@@ -41,7 +41,7 @@ export default function EditPageContent(props: any) {
 	}
 
 	return (
-		<div className="bg-white h-full flex flex-col wrap-break-words">
+		<div className="h-full flex flex-col wrap-break-words">
 			<div className={`relative flex items-center justify-center`}>
 				<div className="flex flex-col w-full md:max-w-full">
 					<LazyMotion features={loadFeatures}>
