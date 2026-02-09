@@ -382,12 +382,12 @@ const Node = memo(function Node(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={closeRename}>
 						<div
-							className={`fixed flex rounded-md p-1 shadow bg-[white]`}
+							className={`fixed flex flex-col p-1 rounded-lg bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 							style={{ top: rect.top + rect.height, left: rect.x + rect.width }}
 						>
-							<div className="flex flex-row gap-2">
+							<div className="flex flex-col gap-2 p-1 w-[250px]">
 								<input
-									className="p-1 rounded-md border w-full"
+									className="p-1 rounded-lg border border-[#ffffeb1a] w-full focus:outline-0"
 									value={renameValue}
 									onChange={(event) => setRenameValue(event.target.value)}
 									autoFocus
