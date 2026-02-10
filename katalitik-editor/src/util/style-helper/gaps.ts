@@ -5,7 +5,7 @@ const gaps: any = {
 	image: "my-3",
 	"page.display": "",
 	"block-selector": "my-1",
-	"image-uploader": "my-1",
+	"image-uploader": "my-2",
 }
 
 export default gaps
