@@ -57,7 +57,7 @@ module.exports = {
 
 		new ModuleFederationPlugin(
 			createModuleFederationConfig({
-				name: "vitraz-ui-editor",
+				name: "katalitik-editor",
 
 				remotes: {
 					provider: "text_block_provider@http://localhost:3102/mf-manifest.json",
