@@ -28,7 +28,9 @@ export default function PositionEditor(props: any) {
 	}
 
 	return (
-		<div className="flex flex-col rounded-lg">
+		<div
+			className={`fixed flex flex-col p-1 rounded-lg bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
+		>
 			<div>
 				{positions.map((position: any) => (
 					<Item
@@ -41,7 +43,8 @@ export default function PositionEditor(props: any) {
 					/>
 				))}
 			</div>
-			<hr className="text-default-light" />
+
+			<div className="mx-1 mt-1 mb-0 border-b border-0.5 border-[#ffffeb1a]" />
 			<div className="flex w-full justify-end">
 				<Button className="w-fit mt-1" onClick={update}>
 					Update

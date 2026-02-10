@@ -220,7 +220,7 @@ export default function Toolbar(props: any) {
 				createPortal(
 					<ClickOutsideListener callback={handleEditorClose}>
 						<div
-							className="fixed flex rounded-lg p-1 shadow-xl border border-default-light bg-[white] z-50"
+							className="fixed flex rounded-lg p-1 z-50"
 							style={{ top: editorTop, left: editorLeft }}
 							ref={editorRef}
 						>
