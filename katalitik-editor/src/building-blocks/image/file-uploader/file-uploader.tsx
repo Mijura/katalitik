@@ -59,9 +59,11 @@ export default function FileUploader({
 				accept={`${mediaType}/*`}
 				style={{ display: "none" }}
 			/>
-			<Button onClick={triggerFileInput} disabled={uploading}>
-				Upload
-			</Button>
+			<div className="m-2">
+				<Button onClick={triggerFileInput} disabled={uploading} className="w-full">
+					Upload
+				</Button>
+			</div>
 		</>
 	)
 }

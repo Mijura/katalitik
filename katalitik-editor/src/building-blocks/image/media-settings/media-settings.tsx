@@ -90,11 +90,11 @@ export default function MediaSettings({ mediaType, icon, props }: MediaSettingsP
 								left: left,
 								transform: `translate(-50%, ${y}%)`,
 							}}
-							className="fixed bg-[white] rounded-[5px] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] z-50"
+							className={`fixed flex flex-col p-1 rounded-sm bg-surface-light text-sm backdrop-filter-none max-w-[calc(100vw-24px)] shadow-dialog-pri outline-1 outline-transparent overflow-hidden`}
 						>
 							<div className="p-4">
 								<div>
-									<Tabs>
+									<Tabs className="w-full">
 										<Tab key={`Upload ${mediaType}`}>
 											<FileUploader mediaType={mediaType} callback={createBlock} />
 										</Tab>
@@ -112,7 +112,7 @@ export default function MediaSettings({ mediaType, icon, props }: MediaSettingsP
 			<div
 				ref={ref}
 				onClick={openUploader}
-				className="w-full py-[8px] bg-surface hover:bg-surface-100 text-secondary cursor-pointer rounded-[5px] flex items-center pl-5"
+				className="w-full py-[8px] bg-surface-light text-secondary cursor-pointer rounded-[5px] flex items-center pl-5"
 			>
 				{icon}
 				<div className="pl-2">Click to add an {mediaType}</div>

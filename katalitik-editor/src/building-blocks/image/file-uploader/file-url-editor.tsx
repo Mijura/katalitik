@@ -32,10 +32,19 @@ export default function FileUrlEditor({
 				</div>
 			)}
 
-			<Input value={fileUrl} onChange={(e) => setFileUrl(e.target.value)} placeholder={`Enter ${fileType} url`} />
+			<div className="m-2">
+				<Input
+					value={fileUrl}
+					className="p-1 rounded-lg border border-[#ffffeb1a] w-full focus:outline-0"
+					onChange={(e) => setFileUrl(e.target.value)}
+					placeholder={`Enter ${fileType} url`}
+				/>
 
-			<div className="mt-3">
-				<Button onClick={() => handleUrlUpdate(fileUrl)}>Embed</Button>
+				<div className="mt-3">
+					<Button onClick={() => handleUrlUpdate(fileUrl)} className="w-full">
+						Embed
+					</Button>
+				</div>
 			</div>
 		</>
 	)
