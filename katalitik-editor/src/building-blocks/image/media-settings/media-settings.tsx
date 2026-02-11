@@ -112,7 +112,7 @@ export default function MediaSettings({ mediaType, icon, props }: MediaSettingsP
 			<div
 				ref={ref}
 				onClick={openUploader}
-				className="w-full py-[8px] bg-surface-light shadow-dialog text-secondary cursor-pointer rounded-[5px] flex items-center pl-5"
+				className="w-full py-[8px] bg-surface-light text-secondary cursor-pointer rounded-[5px] flex items-center pl-5"
 			>
 				{icon}
 				<div className="pl-2">Click to add an {mediaType}</div>
