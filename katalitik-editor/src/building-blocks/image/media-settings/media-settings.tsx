@@ -7,7 +7,7 @@ import ClickOutsideListener from "../../../util/click-outside-listener"
 import FileUploader from "../file-uploader/file-uploader"
 import TemplateFactory from "../../../util/factories/templates/template-factory"
 import FileUrlEditor from "../file-uploader/file-url-editor"
-import { Tabs, Tab } from "@jigjoy-io/ui-library"
+import { Tabs, Tab } from "@jigjoy-ai/ui-library"
 
 interface MediaSettingsProps {
 	mediaType: "image" | "audio" | "video"

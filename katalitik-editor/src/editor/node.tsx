@@ -19,7 +19,7 @@ import AddBlockIcon from "../icons/add-block-icon"
 import RenameIcon from "../icons/rename-icon"
 import TemplateFactory from "../util/factories/templates/template-factory"
 import { nodeHovered } from "../reducers/sidebar-reducer"
-import { Button, Tooltip } from "@jigjoy-io/ui-library"
+import { Button, Tooltip } from "@jigjoy-ai/ui-library"
 import Item from "../components/item/item"
 
 const Node = memo(function Node(props: any) {

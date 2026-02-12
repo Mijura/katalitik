@@ -2,7 +2,7 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion"
 import { useSidebarVisible } from "../util/store"
 import { useDispatch } from "react-redux"
 import { sidebarExpanded } from "../reducers/sidebar-reducer"
-import { Tooltip } from "@jigjoy-io/ui-library"
+import { Tooltip } from "@jigjoy-ai/ui-library"
 import PageRenderer from "../building-blocks/page/page"
 
 const animation = {

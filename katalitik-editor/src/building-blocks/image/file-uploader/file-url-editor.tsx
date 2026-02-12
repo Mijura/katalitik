@@ -1,7 +1,7 @@
 import { useState } from "react"
 import UrlValidator from "../../../util/file-upload/url-validator"
 import Alert from "./alert"
-import { Button, Input } from "@jigjoy-io/ui-library"
+import { Button, Input } from "@jigjoy-ai/ui-library"
 import AlertProps, { AlertType } from "./alert"
 
 export default function FileUrlEditor({

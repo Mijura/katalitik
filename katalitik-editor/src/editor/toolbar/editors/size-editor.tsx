@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { updateBlock } from "../../../reducers/page-reducer"
 import Checkbox from "../../../components/checkbox/checkbox"
-import { Button } from "@jigjoy-io/ui-library"
+import { Button } from "@jigjoy-ai/ui-library"
 
 const sizes = [
 	{ text: "Small", key: "small" },

@@ -1,7 +1,7 @@
 import FileUploader from "../../../building-blocks/image/file-uploader/file-uploader"
 import FileUrlEditor from "../../../building-blocks/image/file-uploader/file-url-editor"
 import { updateBlock } from "../../../reducers/page-reducer"
-import { Tabs, Tab } from "@jigjoy-io/ui-library"
+import { Tabs, Tab } from "@jigjoy-ai/ui-library"
 import { useDispatch } from "react-redux"
 
 interface FileEditorProps {

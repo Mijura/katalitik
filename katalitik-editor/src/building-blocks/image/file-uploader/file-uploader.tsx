@@ -4,7 +4,7 @@ import { useRootPage } from "../../../util/store"
 import AlertProps, { AlertType } from "./alert"
 import { FileTooLargeError } from "../errors/file-too-large-error"
 import FileHelper from "../../../util/file-upload/file-upload"
-import { Button } from "@jigjoy-io/ui-library"
+import { Button } from "@jigjoy-ai/ui-library"
 
 export default function FileUploader({
 	mediaType,

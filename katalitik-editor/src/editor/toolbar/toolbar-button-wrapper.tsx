@@ -1,4 +1,4 @@
-import { Tooltip } from "@jigjoy-io/ui-library"
+import { Tooltip } from "@jigjoy-ai/ui-library"
 import { Component } from "react"
 
 export default class ToolbarButtonWrapper extends Component<any> {

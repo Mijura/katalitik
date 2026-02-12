@@ -5,7 +5,7 @@ import { Provider } from "react-redux"
 import { RouterProvider, createRouter } from "@tanstack/react-router"
 import { routeTree } from "./routeTree.gen"
 import { store } from "./util/store"
-import { JigJoyUIProvider } from "@jigjoy-io/ui-library"
+import { JigJoyUIProvider } from "@jigjoy-ai/ui-library"
 
 const root = document.createElement("div")
 document.body.appendChild(root)
