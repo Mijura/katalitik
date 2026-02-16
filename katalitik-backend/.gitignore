@@ -1,0 +1,12 @@
+node_modules
+build
+projects
+dist
+coverage
+
+.env
+.env.test
+.npmrc
+
+.yarn
+.yarnrc.yml

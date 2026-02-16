@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		"target": "es2016",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": false,
+		"jsx": "react",
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"outDir": "dist",
+		"baseUrl": "./",
+		"paths": {
+			"@domain/*": ["src/domain/*"],
+			"@infra/*": ["src/infrastructure/*"],
+			"@app/*": ["src/application/*"]
+		}
+	},
+	"include": ["src/**/*"],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"src/infrastructure/repositories/template/rspack-react-tailwind/*",
+		"projects",
+		"build"
+	]
+}
